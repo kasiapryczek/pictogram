@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :show]
-    before_action :correct_user, only: [:edit, :update, :destroy]
+    before_action :authenticate_user!
+    before_action :owned_post, only: [:edit, :update, :destroy]
+
 
     def index
        @posts = Post.all.order("created_at DESC")
@@ -42,9 +43,10 @@ class PostsController < ApplicationController
     end
 
     def destroy
-      @post.destroy
-      flash[:success] = "Post succesfully deleted."
-      redirect_to posts_path
+      if @post.destroy
+          flash[:success] = "Post succesfully deleted."
+          redirect_to posts_path
+      end
     end
 
     private
@@ -57,8 +59,12 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def correct_user
-      @post = current_user.posts.find_by(id: params[:id])
-      redirect_to posts_path
-  end
+    def owned_post
+      unless current_user == @post.user
+        flash[:alert] = "That post doesn't belong to you!"
+        redirect_to root_path
+    end
+end
+
+
 end
