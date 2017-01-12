@@ -1,7 +1,7 @@
 <div class="posts-wrapper row">
     <div class="post">
         <div class="post-head">
-            <div class="name"><% @post.user.name %></div>
+            <div class="name"><%= @post.user.name if @post.user %></div>
         </div>
         <div class="image center-block">
             <%= image_tag @post.image.url(:medium) %>
