@@ -97,7 +97,9 @@ body {
   }
 
   a {
-    font-size: 0.6em;
+    font-size: 0.8em;
+    text-decoration: underline;
+    color: #747577;
   }
   #comment {
     margin-top: 7px;
@@ -143,6 +145,15 @@ body {
 .comment-form input {
     width: 100%;
     border: none;
+}
+
+.comments {
+  .paginator {
+    margin: 0.5em;
+    .more-comments {
+      color: #A5A7AA;
+    }
+  }
 }
 
 /* ## Wrapper and styling for the new and edit views ## */
