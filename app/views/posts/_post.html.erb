@@ -20,10 +20,10 @@
         </div>
         <% if user_signed_in? %>
           <div class="comment-like-form row">
-              <div class="like-button col-sm-1">
+              <div class="like-button col-sm-1 col-xs-1">
                   <span class="glyphicon glyphicon-heart-empty"> </span>
               </div>
-              <div class="comment-form col-sm-11">
+              <div class="comment-form col-sm-11 col-xs-10">
                 <%= form_for([post, post.comments.build], remote: true) do |f| %>
                   <%= f.text_field :content, placeholder: 'Add a comment...', id: "comment_content_#{post.id}" %>
                 <% end %>

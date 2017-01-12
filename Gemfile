@@ -32,6 +32,7 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise'
 gem 'aws-sdk', '~> 2.6', '>= 2.6.44'
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 
 
 group :development, :test do

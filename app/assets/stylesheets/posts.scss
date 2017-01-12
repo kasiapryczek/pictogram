@@ -10,6 +10,11 @@ body {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar-brand {
@@ -21,6 +26,7 @@ body {
 .navbar-default {
   background-color: #fff;
   height: 54px;
+  padding-left: 100px;
   .navbar-nav li a {
     color: #125688;
   }
@@ -89,6 +95,10 @@ body {
   .user-name, .caption-content {
     display: inline;
   }
+
+  a {
+    font-size: 0.6em;
+  }
   #comment {
     margin-top: 7px;
     .name {
@@ -106,7 +116,7 @@ body {
   padding-right: 24px;
   padding-bottom: 10px;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 25px;
 }
 
 .comment_content {
@@ -115,6 +125,7 @@ body {
   border: medium none;
   width: 100%;
   color: #4B4F54;
+  margin-bottom: 10px;
 }
 
 .comment-like-form {
@@ -148,4 +159,58 @@ body {
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
+}
+
+#image-preview {
+  margin: 0px auto;
+  margin-top: 50px;
+}
+
+#post_image {
+  padding: 1em;
+  margin: 0px auto;
+  text-align: center;
+  margin-left: 220px;
+}
+
+#post_caption {
+    width: 80%;
+}
+
+#edit_post_site {
+    padding-top: 40px;
+}
+
+#paginator {
+  color: #4090DB;
+  height: 120px;
+  width: 120px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  border: 2px solid #4090DB;
+  border-radius: 50%;
+  :hover {
+    border: 1px solid #2D6DA8;
+    border-radius: 50%;
+  }
+}
+
+#load_more {
+  display: table-cell;
+  font-size: 12px;
+  padding: 0px 9px;
+  vertical-align: middle;
+  text-decoration: none;
+  a :hover {
+    color: #2D6DA8;
+  }
 }
