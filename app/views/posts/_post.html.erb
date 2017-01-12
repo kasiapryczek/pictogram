@@ -11,21 +11,11 @@
             <p class="caption">
                 <strong><%= post.user.name if post.user %></strong>
                 <%= post.caption %></p>
-            <% if post.comments %>
-              <% post.comments.each do |comment| %>
-                <div class="comment">
-                    <strong><%= comment.user.name %></strong>
-                    <div class="comment-content">
-                        <%= comment.content %>
-                    </div>
-                    <% if comment.user == current_user %>
-                      <%= link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } do %>
-                        <span class="glyphicon glyphicon-remove delete-comment"></span>
-                      <% end %>
-                    <% end %>
-                </div>
+            <div class="comment" id="comments_<%= post.id %>">
+              <% if post.comments %>
+                <%= render post.comments, post: post %>
               <% end %>
-            <% end %>
+            </div>
         </div>
         <% if user_signed_in? %>
           <div class="comment-like-form row">
@@ -33,8 +23,8 @@
                   <span class="glyphicon glyphicon-heart-empty"> </span>
               </div>
               <div class="comment-form col-sm-11">
-                <%= form_for [post, post.comments.new] do |f| %>
-                  <%= f.text_field :content, placeholder: 'Add a comment...' %>
+                <%= form_for([post, post.comments.build], remote: true) do |f| %>
+                  <%= f.text_field :content, placeholder: 'Add a comment...', id: "comment_content_#{post.id}" %>
                 <% end %>
               </div>
           </div>

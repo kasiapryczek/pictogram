@@ -46,7 +46,6 @@ body {
   border-style: solid;
   border-radius: 3px;
   border-width: 1px;
-  margin-bottom: 60px;
   .post-head {
     flex-direction: row;
     height: 64px;
@@ -131,6 +130,7 @@ body {
 
 .comment-form input {
     width: 100%;
+    border: none;
 }
 
 /* ## Wrapper and styling for the new and edit views ## */
