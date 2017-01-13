@@ -2,7 +2,7 @@
     <div class="post">
         <div class="post-head">
             <div class="thumb-img"></div>
-            <div class="name"><%= post.user.name if post.user %></div>
+            <div class="name"><%= link_to post.user.name, profile_path(post.user.name) %></div>
             <div class="time-ago"><%= time_ago_in_words post.created_at %></div>
         </div>
         <div class="image center-block">
@@ -10,7 +10,7 @@
         </div>
         <div class="post-bottom">
             <p class="caption">
-                <strong><%= post.user.name if post.user %></strong>
+                <strong><%= link_to post.user.name, profile_path(post.user.name), style: "text-decoration: none; font-size:1em; color: black" %></strong>
                 <%= post.caption %></p>
             <div class="comment" id="comments_<%= post.id %>">
               <% if post.comments.any? %>

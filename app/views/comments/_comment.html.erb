@@ -1,4 +1,4 @@
-<strong><%= comment.user.name %></strong>
+<strong><%= link_to comment.user.name, profile_path(comment.user.name), style: "text-decoration: none; font-size:1em; color: black" %></strong>
 <div class="comment-content">
   <%= comment.content %>
 </div>
