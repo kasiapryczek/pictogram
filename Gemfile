@@ -34,6 +34,7 @@ gem 'devise'
 gem 'aws-sdk', '~> 2.6', '>= 2.6.44'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 gem 'jquery-turbolinks'
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 group :development, :test do

@@ -6,7 +6,7 @@
 @import "bootstrap";
 
 body {
-  background-color: #fafafa;
+  background-color: #D3D8DD;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
@@ -97,9 +97,7 @@ body {
   }
 
   a {
-    font-size: 0.8em;
-    text-decoration: underline;
-    color: #747577;
+    color: #325896;
   }
   #comment {
     margin-top: 7px;
@@ -266,4 +264,19 @@ body {
 
 #image-preview {
     margin-top: 0;
+}
+
+.likes {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+.glyphicon-heart {
+    color: red;
+    text-decoration: none;
+}
+
+.glyphicon-heart:hover {
+    color: red;
+    text-decoration: none;
 }
